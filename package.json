@@ -1,0 +1,16 @@
+{
+  "name": "vue-grid-verify",
+  "version": "1.0.2",
+  "description": "基于vue，一个前端验证码插件；可验证中文语义、颜色、九宫格定位以及鼠标事件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "grid",
+    "verify"
+  ],
+  "author": "humanlegacy",
+  "license": "MIT"
+}
