@@ -1,78 +1,22 @@
-### 纯前端实现验证码功能
+##### 一个vue验证码插件，可验证九宫格定位，图形识别，语义识别，颜色识别以及用户鼠标操作行为
 
-```html
-  <vueVerifyCode @getCode="getCode" ref="verify"/>
+### 用例
+```bash
+# 安装依赖
+npm i vue-grid-verify
 ```
-```js
-import vueVerifyCode from 'vue-verify-code'
+```html
+<!--验证模式，默认position，可选shape,使用图形验证-->
+<vueGridVerify @result="getResult" mode="shape" />
+```
 
-components: { vueVerifyCode },,
-methods: {
-  getCode(code) {
-    // 接收正确的验证码
-    this.code = code
+```js
+import vueGridVerify from 'vue-grid-verify'
+
+methods:{
+  getResult(result){
+    console.log(result)
+    // 返回验证结果
   }
 }
 ```
-### 属性
-```js
-
-  props: {
-    // 验证码宽度
-    width: {
-      type: Number,
-      default: 90
-    },
-
-    // 验证码高度
-    height: {
-      type: Number,
-      default: 35
-    },
-
-    // 验证码字体
-    codeFont: {
-      type: String,
-      default: '22px arial'
-    },
-
-    // 验证码类型   
-    // calc：验证码为计算公式
-    // code：验证码为数字大小写字母组合
-    codeType: {
-      type: String,
-      default: 'code' //calc | code
-    },
-
-    // 验证码长度
-    codeLength: {
-      type: Number,
-      default: 5
-    },
-
-    // 验证码大小写是否敏感
-    strict: {
-      type: Boolean,
-      default: true
-    },
-
-    // 验证码计算范围
-    calcRange: {
-      type: Array,
-      default: [10, 20]
-    },
-    // 验证码计算符号
-    calcSymbol: {
-      type: Array,
-      default: ['+', '-', '*']
-    },
-
-    // 背景干扰线数量
-    lineCount: {
-      type: Number,
-      default: 5
-    }
-  }
-```
-
-![ui](https://raw.githubusercontent.com/749264345/vue-grid-verify/main/WX20220813-083814@2x.png)
